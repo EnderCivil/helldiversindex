@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Helldivers Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="tabs">
+        <button class="tab active" data-category="all">All</button>
+        <button class="tab" data-category="stratagems">Stratagems</button>
+        <button class="tab" data-category="enemies">Enemies</button>
+        <button class="tab" data-category="weapons">Weapons</button>
+        <button class="tab" data-category="planets">Planets</button>
+        <button class="tab" data-category="armor">Armor</button>
+        <button class="tab" data-category="bookmarks">Bookmarks</button>
+      </div>
+      <div class="item-grid" id="itemGrid"></div>
+    </aside>
+    <main class="detail-panel" id="detailPanel">
+      <p class="placeholder">Select an entry to view details.</p>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
