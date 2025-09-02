@@ -1,0 +1,223 @@
+@font-face {
+  font-family: 'FS Sinclair';
+  src: url('./fonts/FSSinclair-Regular.otf') format('opentype');
+}
+
+:root {
+  --hd-yellow: #ffd639;
+  --hd-panel: rgba(40, 40, 40, 0.7);
+}
+
+body {
+  margin: 0;
+  font-family: 'FS Sinclair', sans-serif;
+  color: white;
+  background: url("https://blog.playstation.com/tachyon/2025/08/6145a0ba24210bd1bf537334e4f8ce3e019fd4d4.jpg?resize=1088%2C612&crop_strategy=smart")
+              no-repeat center center fixed;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 40%;
+  padding: 1rem;
+  overflow-y: auto;
+  background: var(--hd-panel);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  background: var(--hd-panel);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+  color: white;
+  font-family: 'FS Sinclair', sans-serif;
+}
+
+.tab.active,
+.tab:hover {
+  border-color: var(--hd-yellow);
+  background: rgba(255, 214, 57, 0.1);
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.item-card {
+  position: relative;
+  background: rgba(60, 60, 60, 0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.item-card:hover,
+.item-card.active {
+  border-color: var(--hd-yellow);
+  background: rgba(255, 214, 57, 0.1);
+}
+
+.item-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.item-title {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.item-logo {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* Detail panel */
+.detail-panel {
+  flex: 1;
+  padding: 1.5rem;
+  background: rgba(20, 20, 20, 0.8);
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.detail-panel.active {
+  opacity: 1;
+}
+
+.placeholder {
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 1rem;
+}
+
+.yellow-line {
+  width: 3px;
+  background: var(--hd-yellow);
+  flex-shrink: 0;
+  min-height: 90px;
+}
+
+.detail-header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.detail-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.detail-description {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.25rem;
+}
+
+.info-boxes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-box {
+  flex: 1;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.75rem;
+  background: rgba(50,50,50,0.5);
+  border-radius: 6px;
+}
+
+.info-box h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--hd-yellow);
+}
+
+.info-list {
+  font-size: 0.85rem;
+}
+
+.pro {
+  color: #4caf50;
+}
+
+.con {
+  color: #f44336;
+}
+
+.bookmark-btn {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-family: 'FS Sinclair', sans-serif;
+  border: 1px solid var(--hd-yellow);
+  background: transparent;
+  color: var(--hd-yellow);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bookmark-btn:hover {
+  background: rgba(255, 214, 57, 0.15);
+}
