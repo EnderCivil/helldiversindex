@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'FS Sinclair';
-  src: url('./fonts/FSSinclair-Regular.otf') format('opentype');
+  src: url('./helldiversindex/fonts/FSSinclair-Regular.otf') format('opentype');
 }
 
 :root {
@@ -221,3 +221,4 @@ body::before {
 .bookmark-btn:hover {
   background: rgba(255, 214, 57, 0.15);
 }
+
